@@ -13,7 +13,6 @@
         "/youtube": {
             "post": {
                 "summary": "Download audio or video from youtube",
-                "description": "Listagem de colaboradores",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -40,7 +39,7 @@
                         "description": "Download realized"
                     },
                     "500": {
-                        "description": "problem on download"
+                        "description": "Problems on download"
                     }
                 }
             }
