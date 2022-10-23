@@ -1,12 +1,12 @@
-import { IDownloadVideoRepository } from '../../Repository/IDownloadRepository';
+import { IDownloadYoutubeRepository } from '../../Repository/InterfacesRepository';
 
 interface IRequest {
 	link: string;
 	type: string;
 }
 
-class DownloadVideoUseCase {
-	constructor(private downloaderRepository: IDownloadVideoRepository) {}
+class DownloadYoutubeUseCase {
+	constructor(private downloaderRepository: IDownloadYoutubeRepository) {}
 
 	execute({ link, type }: IRequest) {
 		const validateDonwloader = this.downloaderRepository.checkValid(link, type);
@@ -20,4 +20,4 @@ class DownloadVideoUseCase {
 	}
 }
 
-export { DownloadVideoUseCase };
+export { DownloadYoutubeUseCase };

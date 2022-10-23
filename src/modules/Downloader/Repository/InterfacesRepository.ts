@@ -1,4 +1,4 @@
-interface IDownloadVideoRepository {
+interface IDownloadYoutubeRepository {
 	download(link: string, type: object);
 	checkValid(link: string, type: string): boolean;
 	choseType(type: string): object;
@@ -9,4 +9,4 @@ interface ITypesLoader {
 	filter: string;
 }
 
-export { IDownloadVideoRepository, ITypesLoader };
+export { IDownloadYoutubeRepository, ITypesLoader };

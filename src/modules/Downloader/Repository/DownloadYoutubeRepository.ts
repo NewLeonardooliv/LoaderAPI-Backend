@@ -1,7 +1,7 @@
-import { IDownloadVideoRepository, ITypesLoader } from './IDownloadRepository';
+import { IDownloadYoutubeRepository, ITypesLoader } from './InterfacesRepository';
 import ytdl from 'ytdl-core';
 
-class DownloadVideoRepository implements IDownloadVideoRepository {
+class DownloadYoutubeRepository implements IDownloadYoutubeRepository {
 	public type: object;
 	download(link: string, type: object) {
 		return ytdl(link, type);
@@ -28,4 +28,4 @@ class DownloadVideoRepository implements IDownloadVideoRepository {
 	}
 }
 
-export { DownloadVideoRepository };
+export { DownloadYoutubeRepository };

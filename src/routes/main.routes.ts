@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { downloadVideoController } from '../modules/Downloader/UseCase/DownloadVideo';
+import { downloadYoutubeController } from '../modules/Downloader/UseCase/DownloadYoutube';
 
 const main = Router();
 
-main.get('/download', (request, response) => {
-	return downloadVideoController.handle(request, response);
+main.post('/youtube', (request, response) => {
+	return downloadYoutubeController.handle(request, response);
 });
 
 export { main };
