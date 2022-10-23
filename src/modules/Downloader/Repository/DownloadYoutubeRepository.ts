@@ -1,4 +1,4 @@
-import { IDownloadYoutubeRepository, ITypesLoader } from './InterfacesRepository';
+import { IDownloadYoutubeRepository } from './InterfacesRepository';
 import ytdl from 'ytdl-core';
 
 class DownloadYoutubeRepository implements IDownloadYoutubeRepository {

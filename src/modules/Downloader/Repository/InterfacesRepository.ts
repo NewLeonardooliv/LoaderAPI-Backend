@@ -4,9 +4,4 @@ interface IDownloadYoutubeRepository {
 	choseType(type: string): object;
 }
 
-interface ITypesLoader {
-	quality: string;
-	filter: string;
-}
-
-export { IDownloadYoutubeRepository, ITypesLoader };
+export { IDownloadYoutubeRepository };
