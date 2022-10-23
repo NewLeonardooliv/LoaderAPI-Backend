@@ -1,0 +1,49 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "VacationControl API Documentation",
+        "description": "Uma API para controle de férias para funcionários",
+        "version": "1.0.0",
+        "contact": {
+            "name": "API Support",
+            "email": "Leonardo_oliveira7@hotmail.com"
+        }
+    },
+    "paths": {
+        "/youtube": {
+            "post": {
+                "summary": "Download audio or video from youtube",
+                "description": "Listagem de colaboradores",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "link": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "link": "https://youtu.be/qU9mHegkTc4",
+                                    "type": "audio"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Download realized"
+                    },
+                    "500": {
+                        "description": "problem on download"
+                    }
+                }
+            }
+        }
+    }
+}

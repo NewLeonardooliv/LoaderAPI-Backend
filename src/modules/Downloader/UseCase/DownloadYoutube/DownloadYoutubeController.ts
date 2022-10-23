@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { Util } from '../../../Util/RandomInt';
 import { DownloadYoutubeUseCase } from './DownloadYoutubeUseCase';
 
 class DownloadYoutubeController {
@@ -7,7 +8,8 @@ class DownloadYoutubeController {
 	handle(request: Request, response: Response) {
 		const { link, type } = request.body;
 
-		response.header('Content-Disposition', 'attachment; filename="video.mp4"');
+		const fileName = Util.getRandomInt(100, 10000);
+		response.header('Content-Disposition', `attachment; filename="${fileName}.mp4"`);
 		return this.downloadYoutubeUseCase.execute({ link, type }).pipe(response);
 	}
 }
