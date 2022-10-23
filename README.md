@@ -4,11 +4,11 @@
 
 ## 🚀 Projeto
 
-Criação de uma API Rest para downloads de audios e vídeos.
+Criação de uma API Rest para downloads de audios e vídeos com Ytdl Core, TypeScript e documentação com Swagger UI Express.
 
 ## 🔧 Tecnologias
 
+-   Swagger UI Express
 -   TypeScript
 -   Express
--   Swagger Ui
 -   Ytdl Core
