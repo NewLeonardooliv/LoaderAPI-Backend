@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "VacationControl API Documentation",
-        "description": "Uma API para controle de férias para funcionários",
+        "title": "Loader API Documentation",
+        "description": "API for download audio and videos",
         "version": "1.0.0",
         "contact": {
             "name": "API Support",
