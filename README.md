@@ -8,6 +8,6 @@ Criação de uma API Rest para downloads de audios e vídeos.
 
 ## 🔧 Tecnologias
 
--   Axios
+-   Express
 -   Swagger Ui
 -   Ytdl Core
