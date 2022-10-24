@@ -12,11 +12,10 @@ class DownloadYoutubeUseCase {
 		const validateDonwloader = this.downloaderRepository.checkValid(link, type);
 
 		if (!validateDonwloader) {
-			throw new Error('Problemas ao validar download.');
+			throw new Error('Problemas ao validar link de download.');
 		}
-		const setedType = this.downloaderRepository.choseType(type);
 
-		return this.downloaderRepository.download(link, setedType);
+		return this.downloaderRepository.list(link, type);
 	}
 }
 

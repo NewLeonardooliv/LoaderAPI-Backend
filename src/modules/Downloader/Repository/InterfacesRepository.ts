@@ -1,7 +1,6 @@
 interface IDownloadYoutubeRepository {
-	download(link: string, type: object);
+	list(link: string, type: string);
 	checkValid(link: string, type: string): boolean;
-	choseType(type: string): object;
 }
 
 export { IDownloadYoutubeRepository };

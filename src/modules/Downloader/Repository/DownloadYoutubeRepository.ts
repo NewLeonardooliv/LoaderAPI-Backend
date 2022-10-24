@@ -3,28 +3,31 @@ import ytdl from 'ytdl-core';
 
 class DownloadYoutubeRepository implements IDownloadYoutubeRepository {
 	public type: object;
-	download(link: string, type: object) {
-		return ytdl(link, type);
-	}
+	async list(link: string, type: string) {
+		let datas = {};
+		let i = 0;
+		const metadata = await ytdl.getInfo(link);
 
-	choseType(value: string) {
-		if (value == 'audio') {
-			this.type = { quality: 'highestaudio', filter: '' };
-		}
-		if (value == 'video') {
-			this.type = { quality: '', filter: 'videoandaudio' };
+		for (const [key, value] of Object.entries(metadata.formats)) {
+			if (value.hasAudio && !value.hasVideo && type == 'audio') {
+				datas[i] = value;
+			}
+
+			if (value.hasAudio && value.hasVideo && type == 'video') {
+				datas[i] = value;
+			}
+
+			if (value.hasAudio && type == undefined) {
+				datas[i] = value;
+			}
+			i++;
 		}
 
-		return this.type;
+		return datas;
 	}
 
 	checkValid(link: string, type: string) {
-		let boValid = true;
-
-		if (type != 'audio' && type != 'video') {
-			boValid = false;
-		}
-		return boValid;
+		return ytdl.validateURL(link);
 	}
 }
 

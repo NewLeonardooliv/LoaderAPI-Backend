@@ -5,12 +5,11 @@ import { DownloadYoutubeUseCase } from './DownloadYoutubeUseCase';
 class DownloadYoutubeController {
 	constructor(private downloadYoutubeUseCase: DownloadYoutubeUseCase) {}
 
-	handle(request: Request, response: Response) {
+	async handle(request: Request, response: Response) {
 		const { link, type } = request.body;
 
-		const fileName = Util.getRandomInt(100, 10000);
-		response.header('Content-Disposition', `attachment; filename="${fileName}.mp4"`);
-		return this.downloadYoutubeUseCase.execute({ link, type }).pipe(response);
+		const download = await this.downloadYoutubeUseCase.execute({ link, type });
+		return response.status(200).json(download);
 	}
 }
 
