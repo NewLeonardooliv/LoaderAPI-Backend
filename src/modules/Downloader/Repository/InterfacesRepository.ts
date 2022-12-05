@@ -1,6 +1,10 @@
 interface IDownloadYoutubeRepository {
-	list(link: string, type: string);
+	list(link: string, type: string): any;
 	checkValid(link: string, type: string): boolean;
 }
 
-export { IDownloadYoutubeRepository };
+interface IDownloadTwitterRepository {
+	downloadVideo(link: string): any;
+}
+
+export { IDownloadYoutubeRepository, IDownloadTwitterRepository };
