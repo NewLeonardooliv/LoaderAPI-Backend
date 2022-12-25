@@ -3,7 +3,7 @@ import swaggerUi from 'swagger-ui-express';
 import cors from 'cors';
 
 import { router } from './routes';
-import documentacaoFile from './swagger.json';
+// import documentacaoFile from './swagger.json';
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(documentacaoFile));
+// app.use('/docs', swaggerUi.serve, swaggerUi.setup(documentacaoFile));
 app.use(router);
 
 const PORT = 8000;
