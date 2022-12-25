@@ -4,6 +4,10 @@ import { downloadYoutubeController } from '../modules/Downloader/UseCase/Downloa
 
 const main = Router();
 
+main.get('/', (request, response) => {
+	return response.status(200).json({ response: `home` });
+});
+
 main.post('/youtube', (request, response) => {
 	return downloadYoutubeController.handle(request, response);
 });
