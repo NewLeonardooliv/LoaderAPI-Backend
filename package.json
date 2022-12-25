@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "19.x"
+  },
   "scripts": {
+    "start": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
