@@ -7,7 +7,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "dev": "ts-node api/index.ts",
+    "dev": "node api/index.js",
     "start": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn api/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
