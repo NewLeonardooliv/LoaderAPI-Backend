@@ -9,7 +9,7 @@ class DownloadYoutubeController {
 		const { link, type } = request.body;
 
 		const download = await this.downloadYoutubeUseCase.execute({ link, type });
-		return response.status(200).json(download);
+		return response.status(200).json({ response: download });
 	}
 }
 
