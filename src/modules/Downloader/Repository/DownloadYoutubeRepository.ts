@@ -2,11 +2,10 @@ import { IDownloadYoutubeRepository } from './InterfacesRepository';
 import ytdl from 'ytdl-core';
 
 class DownloadYoutubeRepository implements IDownloadYoutubeRepository {
+	public type: object;
 	async list(link: string, type: string) {
-		let datas: any;
-		datas = {};
-		let i: any;
-		i = 0;
+		let datas = {};
+		let i = 0;
 		const metadata = await ytdl.getInfo(link);
 
 		for (const [key, value] of Object.entries(metadata.formats)) {
